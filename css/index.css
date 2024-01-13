@@ -21,33 +21,58 @@ img {
 
 
 
-.header {
-    display: flex;
-    flex-direction: rows;
-    gap: 5vw;
+.headerflex {
+  display: flex;
+  flex-direction: row;    
+  gap: 2%;
+  max-width: 100%;
+  flex-wrap: nowrap;
+  position: absolute;
+  top: 0;
+  height: 100vh;
 }
 
-.header__img {
-    display: flex;
-    justify-self: left;
-    max-height: 100vh;
-    width: auto;
+.headerflex__img {
+  max-height: 100vh;
+  max-width: 40%;    
 }
 
-.header__rect {
-    display: flex;
-    justify-self: right;
-    max-height: 100vh;
-    width: 100vw;
+.headerflex__rect {
+  max-width: 58%;
+  max-height: 100%;
+  margin-top: 2%;
+
 }
 
 
-.header__titlehyper:link, .header__titlehyper:visited {
+
+.header__logocontainer {
+  position: sticky;
+  top: 0;
+  left: 40vw;
+  max-width: 30%;
+  z-index: 100;
+  text-align: center;
+}
+
+.header__logocontainer-logo {
+  max-width: 400px;
+  height: auto;
+}
+
+.header__logocontainer-titlehyper {
+  position: absolute;
+  top: 14%;
+  left: 30%;
+
+}
+
+.header__logocontainer-titlehyper:link, .header__logocontainer-titlehyper:visited {
     color: var(--title-color);
     text-decoration: none;
   }
 
-.header__titlehyper:hover {
+.header__logocontainer-titlehyper:hover {
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: var(--title-color);
   -webkit-text-fill-color: transparent;
@@ -57,5 +82,13 @@ img {
   font-family: "Share Tech Mono", monospace;
   font-weight: 400;
   font-style: normal;
-  font-size: 7rem;
+  font-size: 6rem;
 }
+
+.header__coffee {
+  position: sticky;
+  left: 50vw;
+  top: 500px;
+}
+
+
