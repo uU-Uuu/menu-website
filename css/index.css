@@ -10,6 +10,9 @@
 
 :root {
 	--title-color: rgb(0,0,0);
+  --line-color: rgb(0,0,0);
+  --sm-header-color: #d9d9d9;
+  --md-header-color: #ffffff;
 	font-family: "Share Tech Mono", monospace;
 	scroll-behavior: smooth;
   min-width: 335px;
@@ -24,23 +27,21 @@ img {
   max-width: 1200px;
 }
 
-
-
 .headergrid {
   position: relative;
   top: 0;
   left: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2%;
-  /* z-index: 1; */
+  z-index: -1;
+  background-color: var(--sm-header-color);
+}
 
 
 .headergrid__img {
   height: 100vh; 
   object-fit: cover;
   object-position: right 40%;
-
 }
 
 .headergrid__rect {
@@ -49,24 +50,29 @@ img {
 }
 
 .header__logocontainer {
-  position: absolute;
+  position: fixed;
   top: 5%;
-  left: 55%;
+  left: 40%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
 }
 
-.logosticky {
-  position: sticky;
-  top: 0;
+@media (min-width: 800px) {
+  .header__logocontainer {
+    left: 55%;
+  }
+  .headergrid {
+    background-color: var(--md-header-color);
+    gap: 2%;
+  }
 }
+
 
 .header__logocontainer-logo {
    height: 10vw;
 }
-
 
 .header__logocontainer-titlehyper:link, .header__logocontainer-titlehyper:visited {
     color: var(--title-color);
@@ -86,10 +92,44 @@ img {
   font-size: 7vw;
 }
 
+.header__scrolldown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -14vh;
+  height: 14vh;
+  gap: 10px;
+}
+
+.scrolldown-text {
+  margin: 2px 0 5px 0;
+}
+
+.scrolldown-vertline {
+  border-left: 2px solid var(--line-color);
+  height: 10vh;
+}
+
+.header__coffeeflex {
+  display: flex;
+  margin-top: -75vh;
+  justify-content: center;
+}
+
+/* @media (min-width: 800px) {
+  .header__coffeeflex {
+    margin-top: -10vh;
+    margin: -60vh 0 0 60vw;
+    transform: scale(120%);
+    /* transform: scale(100%); */
+    /* transition: 
+      margin-top 3s 1s ease,
+      transform 3s,
+      margin 3s 3s ease; 
+      /* transform 4s; */
+    /* overflow: hidden; */
 
 
-/* .header__coffee {
-  position: sticky;
-  left: 50vw;
-  top: 500px;
-} */
+.header__coffeeflex-img {
+  max-width: 200px;
+}
